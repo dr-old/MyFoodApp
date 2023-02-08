@@ -88,11 +88,11 @@ const stylesCust = StyleSheet.create({
   },
   cardBody: {paddingHorizontal: 20},
   cardTitle: {
-    height: 30,
+    height: 38,
     marginTop: 5,
     justifyContent: 'center',
   },
-  title: styles.h9(),
+  title: styles.h7(),
   price: [styles.h7(), {marginTop: 5}],
   place: [styles.h9(), {marginVertical: 5}],
   rating: {
