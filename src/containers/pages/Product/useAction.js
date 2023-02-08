@@ -7,9 +7,8 @@ const useAction = () => {
   const products = useSelector(state => state.productReducer);
   const favorite = useSelector(state => state.generalReducer.favoriteList);
   const navigation = useNavigation();
-  const [isFav, setFav] = useState(false);
 
-  const handleSimilarProduct = () => {
+  const handleFamilarProduct = () => {
     let data = [];
     if (products.data?.length > 0) {
       for (var i = 0; i < 9; i++) {
@@ -39,9 +38,7 @@ const useAction = () => {
 
   return {
     navigation,
-    isFav,
-    setFav,
-    handleSimilarProduct,
+    handleFamilarProduct,
     handleGetFavorite,
     handleSetFavorite,
   };

@@ -21,7 +21,7 @@ function Home() {
         value: isSearch,
         onChangeText: value => handleSearch(value),
         onSearch: () => handleSearch(isSearch),
-        onProfile: () => console.log(),
+        onProfile: () => navigation.push('Favorite'),
       }}>
       <View style={stylesCust.card}>
         <Divider height={10} />

@@ -12,9 +12,7 @@ function Product({route}) {
   const {itemData} = route.params;
   const {
     navigation,
-    isFav,
-    setFav,
-    handleSimilarProduct,
+    handleFamilarProduct,
     handleGetFavorite,
     handleSetFavorite,
   } = useAction();
@@ -60,14 +58,14 @@ function Product({route}) {
         </View>
 
         <Text style={[styles.h5(color.tblack), stylesCust.similarText]}>
-          Similar Food
+          Familiar Food
         </Text>
 
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          {handleSimilarProduct()?.length > 0 ? (
+          {handleFamilarProduct()?.length > 0 ? (
             <>
               <Divider width={30} />
-              <CardProduct marginRight={30} data={handleSimilarProduct()} />
+              <CardProduct marginRight={30} data={handleFamilarProduct()} />
             </>
           ) : null}
         </ScrollView>

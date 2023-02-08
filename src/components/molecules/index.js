@@ -6,6 +6,7 @@ import FormInput from './FormInput';
 import LoadingExtern from './LoadingExtern';
 import LoadingIntern from './LoadingIntern';
 import NavHeader from './NavHeader';
+import TileProduct from './TileProduct';
 
 export {
   FormInput,
@@ -14,6 +15,7 @@ export {
   BarHeader,
   NavHeader,
   CardProduct,
+  TileProduct,
   LoadingExtern,
   LoadingIntern,
 };

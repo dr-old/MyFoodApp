@@ -2,6 +2,7 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
   Button,
+  Favorite,
   Form,
   Home,
   Product,
@@ -21,6 +22,7 @@ function DashboardStack() {
     {name: 'Setting', comp: Setting, header: false},
     {name: 'Typography', comp: Typography, header: false},
     {name: 'Product', comp: Product, header: false},
+    {name: 'Favorite', comp: Favorite, header: false},
   ];
 
   return (
