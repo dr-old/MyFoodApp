@@ -1,6 +1,7 @@
 import * as React from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, ScrollView} from 'react-native';
 import {ButtonIcon, ButtonLabel, Divider} from '../../../components/atoms';
+import {CardProduct} from '../../../components/molecules';
 import helpers from '../../../utils/helpers';
 import {color, styles} from '../../../utils/styles';
 import {Container} from '../../organism';
@@ -9,7 +10,7 @@ import useAction from './useAction';
 
 function Product({route}) {
   const {itemData} = route.params;
-  const {navigation, isQty, setQty, isFav, setFav} = useAction();
+  const {navigation, isFav, setFav, handleSimilarProduct} = useAction();
 
   return (
     <Container>
@@ -40,16 +41,24 @@ function Product({route}) {
             onClick={() => setFav(!isFav)}
           />
         </View>
-        <View
-          style={{
-            backgroundColor: color.white2,
-            padding: 20,
-            borderRadius: 15,
-          }}>
+        <View style={stylesCust.cardBody}>
           <Text style={styles.h5()}>How to make:</Text>
           <Divider height={10} />
           <Text style={styles.p4(color.tblack)}>{itemData.desc}</Text>
         </View>
+
+        <Text style={[styles.h5(color.tblack), stylesCust.similarText]}>
+          Similar Food
+        </Text>
+
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          {handleSimilarProduct()?.length > 0 ? (
+            <>
+              <Divider width={30} />
+              <CardProduct marginRight={30} data={handleSimilarProduct()} />
+            </>
+          ) : null}
+        </ScrollView>
       </View>
     </Container>
   );

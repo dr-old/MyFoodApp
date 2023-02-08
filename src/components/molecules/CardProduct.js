@@ -15,7 +15,7 @@ import {useNavigation} from '@react-navigation/native';
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
-const CardProduct = ({data}) => {
+const CardProduct = ({data, marginRight}) => {
   const navigation = useNavigation();
   return (
     <View style={stylesCust.cardList}>
@@ -24,7 +24,7 @@ const CardProduct = ({data}) => {
           <TouchableOpacity
             onPress={() => navigation.push('Product', {itemData: item})}
             key={index}
-            style={stylesCust.cardItem}>
+            style={stylesCust.cardItem(marginRight)}>
             <View style={stylesCust.cardImage}>
               <Image source={{uri: item.image}} style={stylesCust.image} />
             </View>
@@ -59,13 +59,14 @@ const stylesCust = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'space-between',
   },
-  cardItem: [
+  cardItem: (marginRight = 0) => [
     {
       height: 156,
       width: width * 0.38,
       marginBottom: 30,
       backgroundColor: color.white,
       borderRadius: 20,
+      marginRight,
     },
     styles.shadowCust(),
   ],
