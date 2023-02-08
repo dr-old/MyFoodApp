@@ -4,8 +4,15 @@ import {color, styles} from '../../utils/styles';
 import {ButtonIcon, Divider, InputText} from '../atoms';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-function NavHeader({title, subtitle, onClick, onSearch, onProfile}) {
-  const [isSearch, setSearch] = useState('');
+function NavHeader({
+  title,
+  subtitle,
+  value,
+  onChangeText,
+  onClick,
+  onSearch,
+  onProfile,
+}) {
   return (
     <TouchableOpacity
       onPress={onClick ? onClick : null}
@@ -26,9 +33,9 @@ function NavHeader({title, subtitle, onClick, onSearch, onProfile}) {
             <FontAwesome5 name="search" size={20} color={color.tgrey3} />
             <Divider width={10} />
             <InputText
-              placeholder="Search"
-              value={isSearch}
-              onChangeText={value => setSearch(value)}
+              placeholder="Search in here ..."
+              value={value}
+              onChangeText={onChangeText}
               returnKeyType="search"
               onSubmitEditing={onSearch}
             />

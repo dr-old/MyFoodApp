@@ -27,6 +27,8 @@ const Container = ({
         <NavHeader
           title={navbar?.title}
           subtitle={navbar?.subtitle}
+          value={navbar?.value}
+          onChangeText={navbar?.onChangeText}
           onSearch={navbar?.onSearch}
           onProfile={navbar?.onProfile}
           onClick={navbar?.onClick}
@@ -41,6 +43,8 @@ const Container = ({
           <NavHeader
             title={navbar?.title}
             subtitle={navbar?.subtitle}
+            value={navbar?.value}
+            onChangeText={navbar?.onChangeText}
             onSearch={navbar?.onSearch}
             onProfile={navbar?.onProfile}
             onClick={navbar?.onClick}
