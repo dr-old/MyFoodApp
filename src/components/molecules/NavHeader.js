@@ -23,7 +23,7 @@ function NavHeader({
           style={stylesCust.buttonFloat}
           name="chevron-left"
           size={20}
-          // onClick={onClick}
+          disabled={true}
         />
       ) : null}
       {onSearch ? (
