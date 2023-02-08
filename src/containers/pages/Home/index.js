@@ -8,8 +8,7 @@ import stylesCust from './stylesCust';
 import useAction from './useAction';
 
 function Home() {
-  const {navigation, product, products, isData, isSearch, handleSearch} =
-    useAction();
+  const {navigation, products, isData, isSearch, handleSearch} = useAction();
 
   console.log(isData);
 

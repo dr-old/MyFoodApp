@@ -25,7 +25,7 @@ const stylesCust = StyleSheet.create({
     color: color.bluep,
   },
   card: {
-    paddingHorizontal: 30,
+    // paddingHorizontal: 30,
     marginTop: -20,
     paddingVertical: 20,
     borderTopLeftRadius: 15,
@@ -36,8 +36,17 @@ const stylesCust = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 20,
+    marginHorizontal: 30,
+  },
+  cardBody: {
+    backgroundColor: color.white8,
+    padding: 20,
+    borderRadius: 15,
+    marginHorizontal: 30,
+    marginBottom: 20,
   },
   cardTitle: {flex: 1},
+  similarText: {marginHorizontal: 30, marginVertical: 20},
   buttonType: (
     clr = color.tblack,
     backgroundColor = 'transparent',
