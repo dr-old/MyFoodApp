@@ -9,6 +9,9 @@ const useAction = () => {
   const products = useSelector(state => state.productReducer);
   const navigation = useNavigation();
   const [isMounted, setMounted] = useState(true);
+  const [isSearch, setSearch] = useState('');
+  const [isData, setData] = useState([]);
+
   const category = [
     {
       name: `Pakaian\nWanita`,
@@ -111,16 +114,28 @@ const useAction = () => {
     const payload = {
       link: 'foods',
     };
-
     dispatch(fetchProductData(payload));
   };
 
-  const onScrollEnd = e => {};
+  const handleSearch = event => {
+    let searchText = event.toString();
+    setSearch(searchText);
+    searchText = searchText.trim().toUpperCase();
+    let data = products.data;
+    if (data?.length > 0) {
+      data = data.filter(l => l.name.toUpperCase().match(searchText));
+      setData(data);
+    }
+  };
 
   return {
     navigation,
     product,
     products,
+    isData,
+    isSearch,
+    setSearch,
+    handleSearch,
   };
 };
 
