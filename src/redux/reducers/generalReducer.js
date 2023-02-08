@@ -6,6 +6,7 @@ const initialState = {
     status: false,
     detail: [],
   },
+  favoriteList: [],
   cartList: [],
   formCart: {},
   formRegister: {
@@ -49,6 +50,13 @@ export default generalReducer = (state = initialState, action) => {
           status: action.status,
           detail: action.detail,
         },
+      };
+
+    // REDUCER FAVORITELIST
+    case 'SET_FAVORITE_LIST':
+      return {
+        ...state,
+        favoriteList: action.favorite,
       };
 
     //REDUCER FORM REGISTER

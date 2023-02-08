@@ -47,6 +47,7 @@ const stylesCust = StyleSheet.create({
   },
   cardTitle: {flex: 1},
   similarText: {marginHorizontal: 30, marginVertical: 20},
+  goBack: {position: 'absolute', top: 20, left: 20, zIndex: 10},
   buttonType: (
     clr = color.tblack,
     backgroundColor = 'transparent',
