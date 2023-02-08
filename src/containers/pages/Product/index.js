@@ -10,12 +10,19 @@ import useAction from './useAction';
 
 function Product({route}) {
   const {itemData} = route.params;
-  const {navigation, isFav, setFav, handleSimilarProduct} = useAction();
+  const {
+    navigation,
+    isFav,
+    setFav,
+    handleSimilarProduct,
+    handleGetFavorite,
+    handleSetFavorite,
+  } = useAction();
 
   return (
     <Container>
       <Image source={{uri: itemData.image}} style={stylesCust.image} />
-      <View style={{position: 'absolute', top: 20, left: 20, zIndex: 10}}>
+      <View style={stylesCust.goBack}>
         <ButtonIcon
           type={stylesCust.buttonType(color.tblack, color.white5)}
           name="chevron-left"
@@ -31,14 +38,19 @@ function Product({route}) {
           </View>
           <ButtonIcon
             type={
-              isFav
+              handleGetFavorite(itemData.name)
                 ? stylesCust.buttonType(color.white, color.bluep5)
                 : 'default'
             }
             name="heart"
             size={20}
             borderRadius={38}
-            onClick={() => setFav(!isFav)}
+            onClick={() =>
+              handleSetFavorite(
+                itemData,
+                handleGetFavorite(itemData.name) ? false : true,
+              )
+            }
           />
         </View>
         <View style={stylesCust.cardBody}>
