@@ -4,6 +4,7 @@ import {
   Button,
   Form,
   Home,
+  Product,
   Setting,
   Splash,
   Typography,
@@ -19,6 +20,7 @@ function DashboardStack() {
     {name: 'Button', comp: Button, header: false},
     {name: 'Setting', comp: Setting, header: false},
     {name: 'Typography', comp: Typography, header: false},
+    {name: 'Product', comp: Product, header: false},
   ];
 
   return (

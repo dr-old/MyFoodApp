@@ -8,11 +8,12 @@ import stylesCust from './stylesCust';
 import useAction from './useAction';
 
 function Home() {
-  const {category, navigation, onScrollEnd, banner, product} = useAction();
+  const {navigation, product, products} = useAction();
 
   return (
     <Container
       bgColor={color.white8}
+      loading={products.loading}
       navbar={{
         type: 'fixed',
         onSearch: () => console.log(),
@@ -21,7 +22,10 @@ function Home() {
       <View style={stylesCust.card}>
         {/* <Text style={styles.h5(color.bluep1)}>Rekomendasi</Text> */}
         <Divider height={10} />
-        <CardProduct data={product} />
+        {/* <Text>{JSON.stringify(products.data)}</Text> */}
+        {!products.loading && products?.data?.length > 0 ? (
+          <CardProduct data={products.data} />
+        ) : null}
       </View>
     </Container>
   );

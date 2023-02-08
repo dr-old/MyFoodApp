@@ -37,7 +37,7 @@ function NavHeader({title, subtitle, onClick, onSearch, onProfile}) {
           {onProfile ? (
             <>
               <TouchableOpacity onPress={onProfile} style={stylesCust.profile}>
-                <FontAwesome5 name="user" size={20} color={color.white} />
+                <FontAwesome5 name="heart" size={20} color={color.white} />
               </TouchableOpacity>
               <Divider width={30} />
             </>
@@ -52,7 +52,7 @@ function NavHeader({title, subtitle, onClick, onSearch, onProfile}) {
 
 const stylesCust = StyleSheet.create({
   profile: {
-    backgroundColor: color.bluep,
+    backgroundColor: color.bluep5,
     width: 40,
     height: 40,
     borderRadius: 40,
@@ -81,7 +81,7 @@ const stylesCust = StyleSheet.create({
     justifyContent: 'center',
   },
   buttonType: {
-    backgroundColor: 'transparent',
+    backgroundColor: color.green,
     borderColor: 'transparent',
     color: color.tblack,
   },

@@ -1,11 +1,14 @@
 import {useNavigation} from '@react-navigation/native';
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Alert, Platform} from 'react-native';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
+import {fetchProductData} from '../../../redux/actions/productAction';
 
 const useAction = () => {
   const dispatch = useDispatch();
+  const products = useSelector(state => state.productReducer);
   const navigation = useNavigation();
+  const [isMounted, setMounted] = useState(true);
   const category = [
     {
       name: `Pakaian\nWanita`,
@@ -95,16 +98,29 @@ const useAction = () => {
     },
   ];
 
-  useEffect(() => {});
+  useEffect(() => {
+    if (isMounted) {
+      handleGetProduct();
+    }
+    return () => {
+      setMounted(false);
+    };
+  });
+
+  const handleGetProduct = () => {
+    const payload = {
+      link: 'foods',
+    };
+
+    dispatch(fetchProductData(payload));
+  };
 
   const onScrollEnd = e => {};
 
   return {
-    category,
     navigation,
-    onScrollEnd,
-    banner,
     product,
+    products,
   };
 };
 

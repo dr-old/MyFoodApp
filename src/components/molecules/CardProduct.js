@@ -26,7 +26,7 @@ const CardProduct = ({data}) => {
             key={index}
             style={stylesCust.cardItem}>
             <View style={stylesCust.cardImage}>
-              <Image source={item.image[0].image} style={stylesCust.image} />
+              <Image source={{uri: item.image}} style={stylesCust.image} />
             </View>
             <View style={stylesCust.cardBody}>
               <View style={stylesCust.cardTitle}>
