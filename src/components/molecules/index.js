@@ -6,6 +6,7 @@ import FormInput from './FormInput';
 import LoadingExtern from './LoadingExtern';
 import LoadingIntern from './LoadingIntern';
 import NavHeader from './NavHeader';
+import SliderItem from './SliderItem';
 import TileProduct from './TileProduct';
 
 export {
@@ -18,4 +19,5 @@ export {
   TileProduct,
   LoadingExtern,
   LoadingIntern,
+  SliderItem,
 };

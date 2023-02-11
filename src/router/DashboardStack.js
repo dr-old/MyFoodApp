@@ -5,7 +5,9 @@ import {
   Favorite,
   Form,
   Home,
+  Login,
   Product,
+  Register,
   Setting,
   Splash,
   Typography,
@@ -23,10 +25,12 @@ function DashboardStack() {
     {name: 'Typography', comp: Typography, header: false},
     {name: 'Product', comp: Product, header: false},
     {name: 'Favorite', comp: Favorite, header: false},
+    {name: 'Login', comp: Login, header: false},
+    {name: 'Register', comp: Register, header: false},
   ];
 
   return (
-    <Stack.Navigator initialRouteName="Home">
+    <Stack.Navigator initialRouteName="Splash">
       {page.map((item, index) => {
         return (
           <Stack.Screen
