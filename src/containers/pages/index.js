@@ -8,6 +8,8 @@ import Product from './Product';
 import Favorite from './Favorite';
 import Login from './Login';
 import Register from './Register';
+import Checkout from './Checkout';
+import History from './History';
 
 export {
   Home,
@@ -20,4 +22,6 @@ export {
   Favorite,
   Login,
   Register,
+  Checkout,
+  History,
 };

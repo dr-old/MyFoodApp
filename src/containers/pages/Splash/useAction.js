@@ -31,6 +31,15 @@ const useAction = () => {
     },
   ];
 
+  useEffect(() => {
+    navigateToLogin();
+  });
+
+  const navigateToLogin = async () => {
+    const wait = time => new Promise(resolve => setTimeout(resolve, time));
+    return wait(2000).then(() => navigation.replace('Login'));
+  };
+
   const onScrollEnd = e => {
     let pageNumber = Math.min(
       Math.max(Math.floor(e.nativeEvent.contentOffset.x / width + 0.5) + 1, 0),

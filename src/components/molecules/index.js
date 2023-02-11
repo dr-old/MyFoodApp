@@ -6,6 +6,7 @@ import FormInput from './FormInput';
 import LoadingExtern from './LoadingExtern';
 import LoadingIntern from './LoadingIntern';
 import NavHeader from './NavHeader';
+import NavHome from './NavHome';
 import SliderItem from './SliderItem';
 import TileProduct from './TileProduct';
 
@@ -15,6 +16,7 @@ export {
   ChatBubble,
   BarHeader,
   NavHeader,
+  NavHome,
   CardProduct,
   TileProduct,
   LoadingExtern,

@@ -2,6 +2,15 @@ import {PixelRatio, Platform, StyleSheet} from 'react-native';
 import {color, styles} from '../../../utils/styles';
 
 const stylesCust = StyleSheet.create({
+  page: {
+    flex: 1,
+    backgroundColor: color.white7,
+    justifyContent: 'center',
+  },
+  logoText: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
   content: {
     backgroundColor: color.white8,
     alignItems: 'center',

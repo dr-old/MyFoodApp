@@ -2,7 +2,12 @@ import React from 'react';
 import {Alert, ScrollView, StatusBar, StyleSheet, View} from 'react-native';
 import FlashMessage from 'react-native-flash-message';
 import {Divider} from '../../components/atoms';
-import {BarHeader, LoadingExtern, NavHeader} from '../../components/molecules';
+import {
+  BarHeader,
+  LoadingExtern,
+  NavHeader,
+  NavHome,
+} from '../../components/molecules';
 import {color} from '../../utils/styles';
 
 const Container = ({
@@ -17,12 +22,6 @@ const Container = ({
   return (
     <View style={stylesCust.page}>
       <BarHeader />
-      <FlashMessage
-        position="top"
-        duration={4000}
-        floating={true}
-        hideOnPress={true}
-      />
       {navbar?.type === 'fixed' ? (
         <NavHeader
           title={navbar?.title}
@@ -41,6 +40,17 @@ const Container = ({
         refreshControl={refreshControl}>
         {navbar?.type === 'nofixed' ? (
           <NavHeader
+            title={navbar?.title}
+            subtitle={navbar?.subtitle}
+            value={navbar?.value}
+            onChangeText={navbar?.onChangeText}
+            onSearch={navbar?.onSearch}
+            onProfile={navbar?.onProfile}
+            onClick={navbar?.onClick}
+          />
+        ) : null}
+        {navbar?.type === 'home' ? (
+          <NavHome
             title={navbar?.title}
             subtitle={navbar?.subtitle}
             value={navbar?.value}

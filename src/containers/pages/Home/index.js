@@ -10,18 +10,16 @@ import useAction from './useAction';
 function Home() {
   const {navigation, products, isData, isSearch, handleSearch} = useAction();
 
-  console.log(isData);
-
   return (
     <Container
-      bgColor={color.white8}
+      bgColor={color.white7}
       loading={products.loading}
       navbar={{
-        type: 'fixed',
+        type: 'home',
         value: isSearch,
         onChangeText: value => handleSearch(value),
         onSearch: () => handleSearch(isSearch),
-        onProfile: () => navigation.push('Favorite'),
+        // onProfile: () => navigation.push('Favorite'),
       }}>
       <View style={stylesCust.card}>
         <Divider height={10} />
