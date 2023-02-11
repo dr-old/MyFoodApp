@@ -6,5 +6,18 @@ import Button from './Button';
 import Splash from './Splash';
 import Product from './Product';
 import Favorite from './Favorite';
+import Login from './Login';
+import Register from './Register';
 
-export {Home, Setting, Typography, Form, Button, Splash, Product, Favorite};
+export {
+  Home,
+  Setting,
+  Typography,
+  Form,
+  Button,
+  Splash,
+  Product,
+  Favorite,
+  Login,
+  Register,
+};
