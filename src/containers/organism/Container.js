@@ -17,12 +17,6 @@ const Container = ({
   return (
     <View style={stylesCust.page}>
       <BarHeader />
-      <FlashMessage
-        position="top"
-        duration={4000}
-        floating={true}
-        hideOnPress={true}
-      />
       {navbar?.type === 'fixed' ? (
         <NavHeader
           title={navbar?.title}

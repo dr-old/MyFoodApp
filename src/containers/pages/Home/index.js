@@ -14,7 +14,7 @@ function Home() {
 
   return (
     <Container
-      bgColor={color.white8}
+      bgColor={color.white7}
       loading={products.loading}
       navbar={{
         type: 'fixed',

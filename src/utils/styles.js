@@ -85,8 +85,8 @@ const styles = StyleSheet.create({
       textTransform: transform,
     },
   ],
-  h1: (clr, align = 'left') => [
-    styles.textBase(30, clr, 'textSemiBold'),
+  h1: (clr, align = 'left', fontStyle = 'textSemiBold') => [
+    styles.textBase(30, clr, fontStyle),
     {textAlign: align},
   ],
   h2: (clr, align = 'left') => [

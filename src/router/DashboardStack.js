@@ -4,7 +4,6 @@ import {
   Button,
   Favorite,
   Form,
-  Home,
   Login,
   Product,
   Register,
@@ -12,13 +11,14 @@ import {
   Splash,
   Typography,
 } from '../containers/pages';
+import TabStack from './TabStack';
 
 const Stack = createNativeStackNavigator();
 
 function DashboardStack() {
   const page = [
     {name: 'Splash', comp: Splash, header: false},
-    {name: 'Home', comp: Home, header: false},
+    {name: 'Home', comp: TabStack, header: false},
     {name: 'Form', comp: Form, header: false},
     {name: 'Button', comp: Button, header: false},
     {name: 'Setting', comp: Setting, header: false},

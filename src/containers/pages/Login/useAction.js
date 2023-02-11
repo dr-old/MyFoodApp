@@ -1,5 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
+import {showMessage} from 'react-native-flash-message';
 import {useDispatch, useSelector} from 'react-redux';
 
 const useAction = () => {
@@ -14,8 +15,14 @@ const useAction = () => {
   };
 
   const signIn = () => {
-    console.log(form);
-    navigation.push('Home');
+    showMessage({
+      message: 'Success',
+      description: 'Login is success',
+      type: 'success',
+    });
+    setTimeout(() => {
+      navigation.push('Home');
+    }, 3000);
   };
 
   const signInValidate = () => {

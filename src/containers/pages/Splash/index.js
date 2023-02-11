@@ -20,41 +20,13 @@ const Splash = () => {
   return (
     <>
       <BarHeader bgcolor={color.white7} />
-      <SafeAreaView style={stylesCust.container}>
-        <ScrollView
-          horizontal={true}
-          scrollEventThrottle={16}
-          pagingEnabled={true}
-          showsHorizontalScrollIndicator={false}
-          onMomentumScrollEnd={onScrollEnd}
-          decelerationRate="fast">
-          {slides.map(item => {
-            return (
-              <SliderItem
-                key={item.key}
-                item={item}
-                width={width}
-                height={height}
-              />
-            );
-          })}
-        </ScrollView>
-        {page !== 2 ? (
-          <View style={stylesCust.paginationWrapper}>
-            {slides.map((_, index) => {
-              return (
-                <View
-                  style={[
-                    stylesCust.paginationDots,
-                    {opacity: page === index ? 1 : 0.2},
-                  ]}
-                  key={index}
-                />
-              );
-            })}
-          </View>
-        ) : null}
-      </SafeAreaView>
+      <View style={stylesCust.page}>
+        <View style={stylesCust.logoText}>
+          <Text style={styles.h1(color.bluep5, null, 'textLight')}>My</Text>
+          <Text style={styles.h1(color.bluep5, null, 'textMedium')}>Food</Text>
+          <Text style={styles.h1(color.bluep5, null, 'textLight')}>App</Text>
+        </View>
+      </View>
     </>
   );
 };
